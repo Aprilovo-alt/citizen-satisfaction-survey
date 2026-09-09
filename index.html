@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#20221f">
+    <title>公民满意度调查｜Citizen Satisfaction Survey</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CRT / 屏幕效果 -->
+    <div class="crt"></div>
+    <div class="vignette"></div>
+
+    <!-- 顶部政府网站栏 -->
+    <header class="government-header">
+        <div class="header-inner">
+
+            <div class="government-mark">
+                <div class="seal">
+                    V
+                </div>
+
+                <div class="government-title">
+                    <strong>维拉共和国</strong>
+                    <span>REPUBLIC OF VEYRA</span>
+                </div>
+            </div>
+
+            <div class="header-status">
+                <span class="status-light"></span>
+                公民服务系统
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- 主体 -->
+    <main class="page">
+
+        <!-- 首页 -->
+        <section id="intro-screen" class="screen active">
+
+            <div class="official-label">
+                OFFICIAL CITIZEN SERVICE PORTAL
+            </div>
+
+            <h1>公民满意度年度调查</h1>
+
+            <div class="english-title">
+                CITIZEN SATISFACTION SURVEY
+            </div>
+
+            <div class="document-box">
+
+                <div class="document-row">
+                    <span>调查编号</span>
+                    <strong>CS-2026-0917</strong>
+                </div>
+
+                <div class="document-row">
+                    <span>调查机构</span>
+                    <strong>公民服务与国家统计局</strong>
+                </div>
+
+                <div class="document-row">
+                    <span>预计时间</span>
+                    <strong>3–5 分钟</strong>
+                </div>
+
+                <div class="document-row">
+                    <span>调查状态</span>
+                    <strong class="green">开放</strong>
+                </div>
+
+            </div>
+
+            <div class="intro-text">
+
+                <p>
+                    尊敬的维拉共和国公民：
+                </p>
+
+                <p>
+                    为进一步了解我国公民的生活状况，
+                    公民服务与国家统计局正在开展第 17 次全国公民满意度调查。
+                </p>
+
+                <p>
+                    您的回答将用于改善公共服务质量，
+                    并帮助政府更好地了解人民的需求。
+                </p>
+
+                <p class="small-warning">
+                    * 根据《国家信息安全法》，拒绝回答可能影响您的公民信用评估。
+                </p>
+
+            </div>
+
+            <button id="start-button" class="main-button">
+                开始调查
+            </button>
+
+            <div class="footer-note">
+                © 2026 Bureau of Citizen Services & National Statistics
+                <br>
+                本网站所有信息均受国家信息安全法保护。
+            </div>
+
+        </section>
+
+
+        <!-- 问卷 -->
+        <section id="survey-screen" class="screen">
+
+            <div class="survey-top">
+
+                <div>
+                    <span class="survey-label">CITIZEN SATISFACTION SURVEY</span>
+                    <span id="question-number">第 01 / 20 题</span>
+                </div>
+
+                <div class="session">
+                    SESSION:
+                    <span id="session-id">0000001</span>
+                </div>
+
+            </div>
+
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+
+            <div id="question-area">
+
+                <div class="question-tag">
+                    QUESTION
+                </div>
+
+                <h2 id="question-text">
+                    您对目前的生活状况是否满意？
+                </h2>
+
+                <div id="options" class="options">
+                </div>
+
+            </div>
+
+            <div id="system-message" class="system-message"></div>
+
+        </section>
+
+
+        <!-- 最终黑屏 -->
+        <section id="blackout-screen" class="screen blackout-screen">
+
+            <div id="blackout-text" class="blackout-text"></div>
+
+        </section>
+
+
+        <!-- 结局 -->
+        <section id="ending-screen" class="screen ending-screen">
+
+            <div class="ending-content">
+
+                <div class="official-label">
+                    SURVEY COMPLETE
+                </div>
+
+                <h1>调查已完成。</h1>
+
+                <p>
+                    感谢您的配合，公民。
+                </p>
+
+                <div class="ending-divider"></div>
+
+                <p class="ending-small">
+                    下一次调查：明天。
+                </p>
+
+                <div class="session-final">
+                    SESSION ID:
+                    <strong id="final-session">0000001</strong>
+                </div>
+
+                <button id="continue-button" class="main-button">
+                    继续调查
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JUMPSCARE -->
+    <div id="jumpscare" class="jumpscare">
+
+        <div class="jumpscare-face">
+
+            <div class="eye left-eye"></div>
+            <div class="eye right-eye"></div>
+
+            <div class="mouth"></div>
+
+        </div>
+
+        <div id="jumpscare-text" class="jumpscare-text">
+            请不要撒谎。
+        </div>
+
+    </div>
+
+
+    <!-- 假摄像头 -->
+    <div id="camera-overlay" class="camera-overlay">
+
+        <div class="camera-header">
+            <span class="record-dot"></span>
+            LIVE
+        </div>
+
+        <div class="camera-image">
+
+            <div class="camera-person">
+                <div class="person-head"></div>
+                <div class="person-body"></div>
+            </div>
+
+        </div>
+
+        <div class="camera-footer">
+            调查对象正在观察中
+        </div>
+
+    </div>
+
+
+    <!-- 错误提示 -->
+    <div id="error-overlay" class="error-overlay">
+        <div class="error-box">
+
+            <div class="error-title">
+                SYSTEM NOTICE
+            </div>
+
+            <div id="error-text">
+                系统发生未知错误。
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
