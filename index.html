@@ -1,264 +1,475 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#20221f">
-    <title>公民满意度调查｜Citizen Satisfaction Survey</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <title>公民满意度调查</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-    <!-- CRT / 屏幕效果 -->
+    <!-- CRT 效果 -->
     <div class="crt"></div>
+    <div class="scanlines"></div>
     <div class="vignette"></div>
 
-    <!-- 顶部政府网站栏 -->
+
+    <!-- =========================
+         政府网站顶部
+         ========================= -->
+
     <header class="government-header">
-        <div class="header-inner">
 
-            <div class="government-mark">
-                <div class="seal">
-                    V
-                </div>
+        <div class="seal">
+            V
+        </div>
 
-                <div class="government-title">
-                    <strong>维拉共和国</strong>
-                    <span>REPUBLIC OF VEYRA</span>
-                </div>
+        <div class="government-title">
+
+            <div class="country-name">
+                维拉共和国
             </div>
 
-            <div class="header-status">
-                <span class="status-light"></span>
-                公民服务系统
+            <div class="agency-name">
+                公民服务与国家统计局
             </div>
 
         </div>
+
+        <div class="header-status">
+            OFFICIAL
+        </div>
+
     </header>
 
 
-    <!-- 主体 -->
-    <main class="page">
 
-        <!-- 首页 -->
-        <section id="intro-screen" class="screen active">
+    <!-- =========================
+         第一页：首页
+         ========================= -->
 
-            <div class="official-label">
-                OFFICIAL CITIZEN SERVICE PORTAL
+    <main id="intro-screen" class="screen active">
+
+        <div class="official-box">
+
+            <div class="document-number">
+                DOCUMENT NO. BCSNS-2049
             </div>
 
-            <h1>公民满意度年度调查</h1>
+            <h1>
+                公民满意度调查
+            </h1>
 
             <div class="english-title">
                 CITIZEN SATISFACTION SURVEY
             </div>
 
-            <div class="document-box">
+            <div class="divider"></div>
 
-                <div class="document-row">
-                    <span>调查编号</span>
-                    <strong>CS-2026-0917</strong>
-                </div>
+            <p class="slogan">
+                满意，是每一位公民的责任。
+            </p>
 
-                <div class="document-row">
-                    <span>调查机构</span>
-                    <strong>公民服务与国家统计局</strong>
-                </div>
+            <p class="intro-description">
 
-                <div class="document-row">
-                    <span>预计时间</span>
-                    <strong>3–5 分钟</strong>
-                </div>
+                本调查由维拉共和国
+                <br>
+                公民服务与国家统计局负责实施。
 
-                <div class="document-row">
-                    <span>调查状态</span>
-                    <strong class="green">开放</strong>
-                </div>
+            </p>
 
-            </div>
+            <p
+                id="visit-info"
+                class="visit-info"
+            >
+                系统状态：正常
+            </p>
 
-            <div class="intro-text">
-
-                <p>
-                    尊敬的维拉共和国公民：
-                </p>
-
-                <p>
-                    为进一步了解我国公民的生活状况，
-                    公民服务与国家统计局正在开展第 17 次全国公民满意度调查。
-                </p>
-
-                <p>
-                    您的回答将用于改善公共服务质量，
-                    并帮助政府更好地了解人民的需求。
-                </p>
-
-                <p class="small-warning">
-                    * 根据《国家信息安全法》，拒绝回答可能影响您的公民信用评估。
-                </p>
-
-            </div>
-
-            <button id="start-button" class="main-button">
+            <button
+                id="start-button"
+                class="government-button main-button"
+            >
                 开始调查
             </button>
 
-            <div class="footer-note">
-                © 2026 Bureau of Citizen Services & National Statistics
-                <br>
-                本网站所有信息均受国家信息安全法保护。
+            <button
+                id="reset-button"
+                class="reset-button"
+            >
+                清除调查记录
+            </button>
+
+            <div class="intro-footer">
+                BCSNS · CITIZEN SERVICES
             </div>
 
-        </section>
-
-
-        <!-- 问卷 -->
-        <section id="survey-screen" class="screen">
-
-            <div class="survey-top">
-
-                <div>
-                    <span class="survey-label">CITIZEN SATISFACTION SURVEY</span>
-                    <span id="question-number">第 01 / 20 题</span>
-                </div>
-
-                <div class="session">
-                    SESSION:
-                    <span id="session-id">0000001</span>
-                </div>
-
-            </div>
-
-            <div class="progress-container">
-                <div id="progress-bar" class="progress-bar"></div>
-            </div>
-
-            <div id="question-area">
-
-                <div class="question-tag">
-                    QUESTION
-                </div>
-
-                <h2 id="question-text">
-                    您对目前的生活状况是否满意？
-                </h2>
-
-                <div id="options" class="options">
-                </div>
-
-            </div>
-
-            <div id="system-message" class="system-message"></div>
-
-        </section>
-
-
-        <!-- 最终黑屏 -->
-        <section id="blackout-screen" class="screen blackout-screen">
-
-            <div id="blackout-text" class="blackout-text"></div>
-
-        </section>
-
-
-        <!-- 结局 -->
-        <section id="ending-screen" class="screen ending-screen">
-
-            <div class="ending-content">
-
-                <div class="official-label">
-                    SURVEY COMPLETE
-                </div>
-
-                <h1>调查已完成。</h1>
-
-                <p>
-                    感谢您的配合，公民。
-                </p>
-
-                <div class="ending-divider"></div>
-
-                <p class="ending-small">
-                    下一次调查：明天。
-                </p>
-
-                <div class="session-final">
-                    SESSION ID:
-                    <strong id="final-session">0000001</strong>
-                </div>
-
-                <button id="continue-button" class="main-button">
-                    继续调查
-                </button>
-
-            </div>
-
-        </section>
+        </div>
 
     </main>
 
 
-    <!-- JUMPSCARE -->
-    <div id="jumpscare" class="jumpscare">
 
-        <div class="jumpscare-face">
+    <!-- =========================
+         调查页面
+         ========================= -->
+
+    <main id="survey-screen" class="screen">
+
+        <div class="survey-window">
+
+            <div class="survey-header">
+
+                <span id="question-number">
+                    问题 1 / 20
+                </span>
+
+                <span id="session-id">
+                    VEYRA-000000
+                </span>
+
+            </div>
+
+
+            <!-- 进度条 -->
+
+            <div class="progress-container">
+
+                <div
+                    id="progress-bar"
+                    class="progress-bar"
+                ></div>
+
+            </div>
+
+
+            <!-- 系统消息 -->
+
+            <div
+                id="system-message"
+                class="system-message"
+            >
+                欢迎，公民。
+            </div>
+
+
+            <!-- 问题 -->
+
+            <div class="question-container">
+
+                <div
+                    id="previous-answer"
+                    class="previous-answer"
+                ></div>
+
+                <h2
+                    id="question-text"
+                    class="question-text"
+                >
+                    您对目前的生活状况是否满意？
+                </h2>
+
+                <div
+                    id="options"
+                    class="options"
+                ></div>
+
+                <div
+                    id="answer-hint"
+                    class="answer-hint"
+                ></div>
+
+            </div>
+
+
+            <!-- 底部状态 -->
+
+            <div class="survey-footer">
+
+                <span>
+                    公民服务与国家统计局
+                </span>
+
+                <span id="footer-status">
+                    系统状态：正常
+                </span>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         黑屏
+         ========================= -->
+
+    <main
+        id="blackout-screen"
+        class="screen blackout-screen"
+    >
+
+        <div
+            id="blackout-text"
+            class="blackout-text"
+        >
+            调查完成。
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         惊吓
+         ========================= -->
+
+    <div
+        id="jumpscare"
+        class="overlay"
+    >
+
+        <div class="scare-face">
 
             <div class="eye left-eye"></div>
+
             <div class="eye right-eye"></div>
 
             <div class="mouth"></div>
 
         </div>
 
-        <div id="jumpscare-text" class="jumpscare-text">
+        <div
+            id="scare-text"
+            class="scare-text"
+        >
             请不要撒谎。
         </div>
 
     </div>
 
 
-    <!-- 假摄像头 -->
-    <div id="camera-overlay" class="camera-overlay">
 
-        <div class="camera-header">
-            <span class="record-dot"></span>
-            LIVE
-        </div>
+    <!-- =========================
+         真实摄像头
+         ========================= -->
 
-        <div class="camera-image">
+    <div
+        id="camera-overlay"
+        class="camera-overlay"
+    >
 
-            <div class="camera-person">
-                <div class="person-head"></div>
-                <div class="person-body"></div>
+        <div class="camera-window">
+
+            <div class="camera-top">
+
+                <span class="camera-live">
+                    ● LIVE
+                </span>
+
+                <span>
+                    ENVIRONMENT CHECK
+                </span>
+
             </div>
 
-        </div>
 
-        <div class="camera-footer">
-            调查对象正在观察中
+            <div class="camera-video-container">
+
+                <video
+                    id="camera-video"
+                    autoplay
+                    playsinline
+                    muted
+                ></video>
+
+                <div class="camera-noise"></div>
+
+                <div class="camera-scanlines"></div>
+
+                <div class="camera-corner top-left"></div>
+                <div class="camera-corner top-right"></div>
+                <div class="camera-corner bottom-left"></div>
+                <div class="camera-corner bottom-right"></div>
+
+                <div
+                    id="camera-warning"
+                    class="camera-warning"
+                >
+                    正在确认环境……
+                </div>
+
+            </div>
+
+
+            <div class="camera-info">
+
+                <div>
+                    VISUAL DEVICE:
+                    <span id="camera-status">
+                        CONNECTING
+                    </span>
+                </div>
+
+                <div>
+                    SUBJECT:
+                    <span>
+                        CONFIRMED
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div
+                id="camera-message"
+                class="camera-message"
+            >
+                正在分析环境……
+            </div>
+
+
+            <div
+                class="camera-bottom"
+                id="camera-bottom"
+            >
+                调查对象：在线
+            </div>
+
         </div>
 
     </div>
 
 
-    <!-- 错误提示 -->
-    <div id="error-overlay" class="error-overlay">
+
+    <!-- =========================
+         摄像头权限失败
+         ========================= -->
+
+    <div
+        id="camera-denied"
+        class="permission-overlay"
+    >
+
+        <div class="permission-box">
+
+            <div class="permission-title">
+                环境验证失败
+            </div>
+
+            <div
+                id="permission-message"
+                class="permission-message"
+            >
+                无法访问视觉设备。
+            </div>
+
+            <button
+                id="permission-continue"
+                class="government-button"
+            >
+                继续调查
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         假错误弹窗
+         ========================= -->
+
+    <div
+        id="error-overlay"
+        class="error-overlay"
+    >
+
         <div class="error-box">
 
             <div class="error-title">
-                SYSTEM NOTICE
+                SYSTEM ERROR
             </div>
 
-            <div id="error-text">
-                系统发生未知错误。
+            <div class="error-content">
+
+                调查系统发生未知错误。
+
+                <br><br>
+
+                ERROR CODE:
+                VEYRA_0000
+
             </div>
+
+            <button
+                id="error-close"
+                class="government-button"
+            >
+                确定
+            </button>
 
         </div>
+
     </div>
+
+
+
+    <!-- =========================
+         结束页面
+         ========================= -->
+
+    <main
+        id="ending-screen"
+        class="screen ending-screen"
+    >
+
+        <div class="ending-box">
+
+            <div class="ending-label">
+                BCSNS FINAL NOTICE
+            </div>
+
+            <h1 id="ending-title">
+                调查完成
+            </h1>
+
+            <p id="ending-text">
+                感谢您的配合，公民。
+            </p>
+
+            <div
+                class="ending-small"
+            >
+                下一次调查：即将开始。
+            </div>
+
+            <button
+                id="continue-button"
+                class="government-button"
+            >
+                返回
+            </button>
+
+        </div>
+
+    </main>
+
 
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
